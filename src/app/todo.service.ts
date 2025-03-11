@@ -7,8 +7,8 @@ import { Todo } from './models/todo.model';
 //Defines the Service Class
 export class TodoService {
   todos: Todo[] = [
-    { id: 1, title: 'Learn Angular', completed: true },
-    { id: 2, title: 'Build an app', completed: true },
+    { id: 1, title: 'Learn Angular', completed: false },
+    { id: 2, title: 'Build an app', completed: false },
   ];
 
   //Returns the current list of tasks.
