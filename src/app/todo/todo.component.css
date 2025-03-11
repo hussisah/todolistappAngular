@@ -62,7 +62,6 @@
   }
   
   span {
-    flex-grow: 1;
     font-size: 16px;
     color: #333;
   }
@@ -75,11 +74,11 @@
   
   /* Delete Button */
   li button {
-    background-color: #a76d73;
+    background-color: #e40017;
   }
   
   li button:hover {
-    background-color: #380b0f;
+    background-color: #ffccd0;
   }
 
   *{
