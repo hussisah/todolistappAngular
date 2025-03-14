@@ -3,16 +3,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <div class="todo-container">
     <h2>To-Do List</h2>
-  
+  <!--Uses data binding ([(ngModel)]) to get user input-->
     <input [(ngModel)]="newTodoTitle" placeholder="Enter new task" />
+    <!--Uses event binding ((click)-->
     <button (click)="addTodo()">Add</button>
   
     <ul>
       <li *ngFor="let todo of todos">
+        <!--Uses a checkbox to mark tasks as complete-->
         <input type="checkbox" [checked]="todo.completed" (change)="toggleComplete(todo.id)" />
         <span [class.completed]="todo.completed">{{ todo.title }}</span>
+        <!--The "Delete" button removes a task-->
         <button (click)="deleteTodo(todo.id)">Delete</button>
+
       </li>
+      <!--button (click)="clearTodos()">Clear All</button-->
+
     </ul>
   </div>
   

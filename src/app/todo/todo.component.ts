@@ -13,6 +13,11 @@ import { FormsModule } from '@angular/forms';
 })
 //Defining the TodoComponent Class
 export class TodoComponent implements OnInit {
+  //to clear the whole list 
+//clearTodos() {
+  //localStorage.removeItem('todos');
+ // this.todos = [];
+//}
   todos: Todo[] = [];
   newTodoTitle: string = '';
 //Constructor - Injecting the Service
@@ -32,10 +37,22 @@ export class TodoComponent implements OnInit {
  //  Removes a task from the list
   deleteTodo(id: number) {
     this.todos = this.todos.filter(todo => todo.id !== id);
+    this.Save();
   }
 //  Marks a task as complete or incomplete
   toggleComplete(id: number) {
     this.todoService.toggleComplete(id);
   }
+
+  // Saves todos to local storage
+  Save() {
+    if (typeof localStorage !== 'undefined') { //it ensures localStorage is available before trying to use it.
+    localStorage.setItem('todo', JSON.stringify(this.todos));
+  }
 }
+
+}
+
+
+
 
